@@ -1,6 +1,6 @@
 const Footer = (props) => {
   return (
-    <div className={`container-fluid bg-${props.color}`}>
+    <div className={`container-fluid bg-${props.color} ${props.text}`}>
       <div className="row justify-content-center">
         <h4 className="text-center ">Created By Rezaser</h4>
         <div className="col-6 text-center ">

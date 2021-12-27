@@ -1,10 +1,16 @@
 import Lottie from "react-lottie";
+
 import { FormGroup, Label, Input, Button } from "reactstrap";
 import animationData from "../Lotties/86701-sending-a-message.json";
 import animationData2 from "../Lotties/15127-needs-your-location-or-gps.json";
 import instagram from "../../node_modules/bootstrap-icons/icons/instagram.svg";
 import Footer from "./footer";
+import { useRef, useState } from "react";
+import { Alert } from "@mui/material";
 const ContactForm = () => {
+  const [error, handlingError] = useState(true);
+  const [success, handlingSuccess] = useState(true);
+  const email = useRef(null);
   const defaultOptions1 = {
     loop: true,
     autoplay: true,
@@ -22,13 +28,20 @@ const ContactForm = () => {
       <div className="row">
         <div className="col-lg-4 p-4">
           <h1 className="display-3 my-5">Drop me a Line </h1>
+          <Alert severity="error" hidden={error}>
+            Please enter a valid Email
+          </Alert>
+          <Alert severity="success" hidden={success}>
+            Thank your we will be in touch soon
+          </Alert>
           <FormGroup>
             <Label for="exampleEmail">Enter your Email Here:</Label>
-            <Input
-              id="exampleEmail"
-              name="email"
-              placeholder="Email"
-              type="email"
+            <input
+              type="
+                  email"
+              placeholder="please enter an email"
+              className="form-control"
+              ref={email}
             />
           </FormGroup>
           <FormGroup>
@@ -44,7 +57,14 @@ const ContactForm = () => {
             <Label for="exampleText">and Write here your Comment :</Label>
             <Input id="exampleText" name="text" type="textarea" />
           </FormGroup>
-          <Button block color="primary" size="lg">
+          <Button
+            block
+            color="primary"
+            size="lg"
+            onClick={() => {
+              SubmitBtn();
+            }}
+          >
             Submit
           </Button>
         </div>
@@ -82,12 +102,27 @@ const ContactForm = () => {
               </svg>
             </a>
           </h4>
-          <h4></h4>
         </div>
       </div>
       <Footer />
     </div>
   );
+
+  function SubmitBtn() {
+    if (!email.current.value || !email.current.value.includes("@")) {
+      handlingError(false);
+      setTimeout(() => {
+        handlingError(true);
+      }, 3000);
+    }
+else{
+  handlingSuccess(false);
+  setTimeout(() => {
+    handlingSuccess(true);
+  }, 3000);
+}
+
+  }
 };
 
 export default ContactForm;

@@ -1,10 +1,24 @@
+import { Hidden } from "@mui/material";
+import Alert from "@mui/material/Alert";
+import { useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { Form, FormGroup, Label, Input } from "reactstrap";
+
 const Submit = () => {
+  const [error, handlingError] = useState(true);
+  const [success, handlingSuccess] = useState(true);
+
+  const email = useRef(null);
   return (
     <div className="container p-5">
       <div className="row">
         <div className="col-12 text-center">
+          <Alert severity="error" hidden={error}>
+            Please enter a valid Email
+          </Alert>
+          <Alert severity="success" hidden={success}>
+            Thank your we will be in touch soon
+          </Alert>
           <h2>do you want to contact me?</h2>
           <h4>go to contact page</h4>
           <h5>from here</h5>
@@ -70,16 +84,23 @@ const Submit = () => {
                     </span>
                     :
                   </Label>
-                  <Input
-                    id="exampleEmail"
-                    name="email"
-                    placeholder="Please Enter your Email"
-                    type="email"
+                  <input
+                    type="
+                  email"
+                    placeholder="please enter an email"
+                    className="form-control"
+                    ref={email}
                   />
                 </FormGroup>
               </div>
               <div className="col-12 text-center">
-                <a href="" role="button" className="btn btn-primary p-2">
+                <a
+                  onClick={() => {
+                    SubmitBtn();
+                  }}
+                  role="button"
+                  className="btn btn-primary p-2"
+                >
                   <span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -101,6 +122,20 @@ const Submit = () => {
       </div>
     </div>
   );
-};
 
+  function SubmitBtn() {
+    if (!email.current.value || !email.current.value.includes("@")) {
+      handlingError(false);
+      setTimeout(() => {
+        handlingError(true);
+      }, 3000);
+    } else {
+      handlingSuccess(false);
+      setTimeout(() => {
+        handlingSuccess(true);
+      }, 3000);
+      console.log(email.current.value);
+    }
+  }
+};
 export default Submit;

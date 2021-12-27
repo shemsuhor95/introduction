@@ -9,7 +9,7 @@ const Home = () => {
     <div className="container-fluid bg-dark">
       <Banner />
       <Features />
-      <Footer color="white"/>
+      <Footer color="dark" text="text-white" />
     </div>
   );
 };

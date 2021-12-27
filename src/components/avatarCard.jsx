@@ -56,7 +56,7 @@ const AvatarUser = () => {
               programming, I quickly learned HTML and CSS and switched to
               JavaScript, and after three months of working in the field of
               Front-end.Now i'm trying to Find job for myself so i created this
-              site and uploaded it into my GitHub so you can watch it for free.{" "}
+              site and uploaded it into my GitHub so you can watch it.{" "}
             </h5>
           </div>
         </div>
