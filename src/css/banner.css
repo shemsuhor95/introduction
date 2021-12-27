@@ -72,6 +72,11 @@
   color: #000;
 }
 
+.glow {
+  border: solid 1px white;
+  border-radius: 5em;
+}
+
 @keyframes glowing {
   0% {
     background-position: 0 0;

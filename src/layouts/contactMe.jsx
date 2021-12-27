@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import ContactForm from "./contactForm";
-import Submit from "./submit";
+import ContactForm from "../components/contactForm";
+import Submit from "../components/submit";
 
 class ContactMe extends React.Component {
   render() {

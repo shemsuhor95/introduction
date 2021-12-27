@@ -1,8 +1,8 @@
-const Footer = () => {
+const Footer = (props) => {
   return (
-    <div className="container-fluid bg-dark">
+    <div className={`container-fluid bg-${props.color}`}>
       <div className="row justify-content-center">
-        <h4 className="text-center text-white">Created By Rezaser</h4>
+        <h4 className="text-center ">Created By Rezaser</h4>
         <div className="col-6 text-center ">
           <a className="mx-2" href="https://instagram.com/rezaser/">
             <span>

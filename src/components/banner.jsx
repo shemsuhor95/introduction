@@ -2,6 +2,7 @@ import Lottie from "react-lottie";
 import { NavLink } from "react-router-dom";
 import animationData from "../Lotties/81945-breath.json";
 import "../css/banner.css";
+import "../css/banner-ease-out.css";
 const Banner = () => {
   const defaultOptions = {
     loop: true,
@@ -14,14 +15,14 @@ const Banner = () => {
 
   return (
     <div className="container ">
-      <div className="row text-center align-content-center my-5">
+      <div className="row text-center align-content-center">
         <div className="col-lg-6">
           <h1>
             {" "}
             <Lottie options={defaultOptions} height={600} width={400} />
           </h1>
         </div>
-        <div className="col-lg-6 align-self-center ">
+        <div className="col-lg-6 align-self-center  p-4  bg-light glow ">
           <h1 className="display-2">Hi</h1>
           <h1>My Name is</h1>
           <h1>Reza Serpooshan</h1>
@@ -45,7 +46,7 @@ const Banner = () => {
               </svg>
             </span>
           </h6>
-          <NavLink className="glow-on-hover" to="/about-me">
+          <NavLink className="glow-on-hover " to="/about-me">
             About Me
           </NavLink>
         </div>

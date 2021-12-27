@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import {
   Navbar,
   Nav,
@@ -6,16 +7,20 @@ import {
   NavbarToggler,
   Collapse,
   NavItem,
-  NavLink,
 } from "reactstrap";
 function NavigationBar() {
   const [Btn, setBtn] = useState(false);
   return (
     <>
-      <Navbar expand="lg" light>
-        <NavbarBrand href="/" className="mx-5" style={{ borderRadius: "30%" }}>
-          Home
-        </NavbarBrand>
+      <Navbar expand="lg" light color="dark">
+        <NavLink
+          to="/"
+          className="navbar-brand text-white"
+          style={{ fontWeight: "600" }}
+        >
+          HOME
+        </NavLink>
+
         <NavbarToggler
           onClick={() => {
             let expand = true;
@@ -30,19 +35,33 @@ function NavigationBar() {
         <Collapse navbar isOpen={Btn}>
           <Nav className="me-auto" navbar>
             <NavItem>
-              <NavLink href="/about-me">About me</NavLink>
+              <NavLink
+                to="/about-me"
+                className="nav-link text-white "
+                style={{ fontWeight: "600", fontSize: "18pt" }}
+              >
+                About me
+              </NavLink>
             </NavItem>
+
             <NavItem>
               <NavLink
-                target="_blank"
-                href="https://github.com/shemsuhor95 "
-                className=" text-50-dark mx-2"
+                to="/contact-me"
+                className="nav-link text-white"
+                style={{ fontWeight: "600", fontSize: "18pt" }}
               >
-                My GitHub
+                Contact Me
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/contact-me">Contact Me</NavLink>
+              <a
+                target="_blank"
+                href="https://github.com/shemsuhor95 "
+                className="nav-link text-white"
+                style={{ fontWeight: "600", fontSize: "18pt" }}
+              >
+                My GitHub
+              </a>
             </NavItem>
           </Nav>
         </Collapse>

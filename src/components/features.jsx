@@ -33,20 +33,20 @@ const Features = () => {
     <div className="container">
       <div className="row text-center my-2 justify-content-center align-items-center p-5">
         <div className="col-12 ">
-          <h1 className="display-1">Why React?</h1>
+          <h1 className="display-1 text-white">Why React?</h1>
         </div>
 
         <div className="col-md-4">
           <Lottie options={defaultOptions1} height={200} width={200} />
-          <h1 className="display-5">It's Fast</h1>
+          <h1 className="display-5 text-white">It's Fast</h1>
         </div>
         <div className="col-md-4">
           <Lottie options={defaultOptions2} height={200} width={200} />
-          <h1 className="display-5">Secure</h1>
+          <h1 className="display-5 text-white">Secure</h1>
         </div>
         <div className="col-md-4">
           <Lottie options={defaultOptions3} height={200} width={200} />
-          <h1 className="display-5">And easy to Deploy</h1>
+          <h1 className="display-5 text-white">And easy to Deploy</h1>
         </div>
       </div>
     </div>

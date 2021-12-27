@@ -1,6 +1,6 @@
-import AvatarUser from "./avatarCard";
-import Abilites from "./Abilites";
-import Submit from "./submit";
+import AvatarUser from "../components/avatarCard";
+import Abilites from "../components/Abilites";
+import Submit from "../components/submit";
 
 const AboutMe = () => {
   return (

@@ -1,8 +1,8 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import AboutMe from "./components/aboutMe";
-import ContactMe from "./components/contactMe";
+import AboutMe from "./layouts/aboutMe";
+import ContactMe from "./layouts/contactMe";
 
-import Home from "./components/home";
+import Home from "./layouts/home";
 
 import NavigationBar from "./components/navbar";
 function App() {
